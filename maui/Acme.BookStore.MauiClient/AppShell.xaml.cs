@@ -10,10 +10,13 @@ using System.Threading.Tasks;
 namespace Acme.BookStore.MauiClient;
 [XamlCompilation(XamlCompilationOptions.Compile)]
 public partial class AppShell : Shell
+using Acme.BookStore.MauiClient.Pages;
+
 {
     public AppShell()
     {
         InitializeComponent();
         Routing.RegisterRoute(nameof(UsersPage), typeof(UsersPage));
+        Routing.RegisterRoute(nameof(LoginPage), typeof(LoginPage));
     }
 }

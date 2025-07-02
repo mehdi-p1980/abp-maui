@@ -3,6 +3,9 @@ using Microsoft.Extensions.FileProviders;
 using System.Reflection;
 using Volo.Abp;
 using Volo.Abp.Autofac;
+using Acme.BookStore.MauiClient.Auth;
+using Acme.BookStore.MauiClient.ViewModels;
+using Acme.BookStore.MauiClient.Pages;
 
 namespace Acme.BookStore.MauiClient;
 
@@ -25,6 +28,11 @@ public static class MauiProgram
         {
             options.Services.ReplaceConfiguration(builder.Configuration);
         });
+
+        // Register services and viewmodels
+        builder.Services.AddTransient<AuthService>();
+        builder.Services.AddTransient<LoginViewModel>();
+        builder.Services.AddTransient<LoginPage>(); // Register LoginPage for DI if it's resolved this way
 
         var app = builder.Build();
 

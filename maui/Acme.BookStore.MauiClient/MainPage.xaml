@@ -3,11 +3,33 @@
              x:Class="Acme.BookStore.MauiClient.MainPage">
 
     <ScrollView>
-        <StackLayout Spacing="25"
-                     VerticalOptions="CenterAndExpand">
+        <VerticalStackLayout
+            Spacing="20"
+            Padding="20"
+            VerticalOptions="Center">
 
-            <Button Text="Click to Log In" Clicked="OnLoginClicked" HorizontalOptions="Center"/>
+            <Label
+                Text="Welcome to the BookStore App!"
+                FontSize="22"
+                HorizontalOptions="Center" />
 
-        </StackLayout>
+            <Label
+                x:Name="UserInfoLabel"
+                Text="You are logged in."
+                FontSize="16"
+                HorizontalOptions="Center" />
+
+            <Button
+                Text="View Users (Test)"
+                Clicked="OnViewUsersClicked"
+                HorizontalOptions="Center" />
+
+            <Button
+                x:Name="LogoutButton"
+                Text="Logout"
+                Clicked="OnLogoutClicked"
+                HorizontalOptions="Center" />
+
+        </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
